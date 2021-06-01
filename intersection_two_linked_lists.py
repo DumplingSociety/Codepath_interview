@@ -1,7 +1,5 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#Multiple Pass Technique
+# Write a program to find the node at which the intersection of two singly linked lists begins. For example, the following two linked lists:
 
 class Node(object):
     def __init__(self, v):
@@ -19,6 +17,9 @@ class Node(object):
         n.next = self
         return n
 
+def get_len_recur(ll):
+    if not ll: return 0 # A None path has 0 length
+    return get_len_recur(ll.next) + 1 # The length at this node is 1 + length of rest
 
 def get_len(ll):
     l = 0
